@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    padding-left: 60px;
+}
+
+header {
+    background-image: url(/img/header.png);
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.header-text h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    max-width: 140px;
+    height: auto;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+main {
+    padding: 80px 20px 20px; 
+}
+
+.victim-info {
+    display: flex;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 60px;
+    justify-content: center;
+}
+
+.victim-photo {
+    flex: 1;
+    max-width: 380px;
+    border: 2px solid #000d1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.victim-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.victim-details {
+    flex: 2;
+    background-color: #ffffff;
+    border: 2px solid #000d1c;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.victim-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #000d1c;
+}
+
+.victim-details p {
+    margin: 10px 0;
+}
+
+.victim-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+footer {
+    background-color: #000d1c;
+    color: #ffffff;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

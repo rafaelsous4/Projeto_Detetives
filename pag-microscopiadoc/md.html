@@ -1,0 +1,87 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Forense Digital - Microscopia de Documentos</title>
+    <link rel="stylesheet" href="md.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+
+<header>
+<div class="containernav">
+    <div class="header-content">
+        <div class="header-logo">
+            <img src="/images/logobw.png" width="140" height="120" alt="IBF Logo">
+        </div>
+      <body style="background-image: url(/images/background.png);">  <div class="header-text">
+            <h1>IBF Investigations</h1>
+            <nav>
+                <ul>
+                    <li><a href="/pag-inicial/paginainicial.html">Página Inicial</a></li>
+                    <li><a href="/pag-casos/casos.html">Casos</a></li>
+                    <li><a href="/pag-labforense/teste.html">Laboratório Forense</a></li>
+                </ul>
+            </nav>
+        </div>
+       
+    </div>
+</div>
+</header>
+
+    <main>
+        <div class="container">
+            <div class="microscopia">
+                <h1>MICROSCOPIA DE DOCUMENTOS</h1>
+            </div>
+            <p>Verificação da Veracidade e Comparação de Documentos</p>
+            
+            <form id="documentForm">
+                <label for="documentType">Selecionar Tipo de Documento:</label>
+                <select id="documentType" name="documentType">
+                    <option value="outro">  </option>
+                    <option value="outro">Outro</option>
+                    <option value="certidao-casamento">Certidão de Casamento</option>
+                    <option value="certidao-nascimento">Certidão de Nascimento</option>
+                    <option value="documento-identidade">Documento de Identidade</option>
+                    <option value="contrato">Contrato</option>
+                </select>
+
+                <label for="documentImage">Adicionar Foto do Documento:</label>
+                <input type="file" id="documentImage" name="documentImage" accept="image/*">
+
+                <label for="comparisonFile">Comparar com Documento Existente:</label>
+                <input type="file" id="comparisonFile" name="comparisonFile" accept="image/*">
+
+                <button type="submit">Enviar para Análise</button>
+            </form>
+
+            <div id="loading" class="hidden">
+                <p>Carregando...</p>
+                <div class="loader"></div>
+            </div>
+
+            <div id="results" class="hidden">
+                <h2>Resultados da Análise</h2>
+                <div id="images">
+                    <div class="image-container">
+                        <h3>Documento Original</h3>
+                        <img id="originalImage" alt="Imagem Original">
+                    </div>
+                    <div class="image-container">
+                        <h3>Documento Comparado</h3>
+                        <img id="comparisonImage" alt="Imagem Comparada">
+                    </div>
+                </div>
+                <p id="resultText"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="md.js"></script>
+</body>
+<footer>
+    <p>&copy; 2024 IBF Investigators - Laboratório Forense Digital</p>
+</footer>
+</html>

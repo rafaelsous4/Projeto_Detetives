@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Digitais</title>
+    <link rel="stylesheet" href="digital.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+
+<header>
+    <div class="containernav">
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="/images/logobw.png" width="140" height="120" alt="IBF Logo">
+            </div>
+          <body style="background-image: url(/images/background.png);">  <div class="header-text">
+                <h1>IBF Investigations</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pag-inicial/paginainicial.html">Página Inicial</a></li>
+                        <li><a href="/pag-casos/casos.html">Casos</a></li>
+                        <li><a href="/pag-labforense/teste.html">Laboratório Forense</a></li>
+                    </ul>
+                </nav>
+            </div>
+           
+        </div>
+    </div>
+</header>
+
+<div class="subtitulo">
+    <h1>Ánalise de Datiloscopia</h1>
+</div>
+
+    <div class="container-dig">
+        <div class="suspects-container">
+            
+            <div class="suspect">
+                <img src="/images/suspeito1.jpg" alt="Foto do Suspeito 1" class="photo">
+                <p class="name">Suspeito 1</p>
+                <p class="age">Idade: 30</p>
+                <img src="/images/digital1.jpg" alt="Digital do Suspeito 1" class="fingerprint" onclick="startComparison()">
+            </div>
+            
+            <div class="suspect">
+                <img src="/images/suspeito2.jpg" alt="Foto do Suspeito 2" class="photo">
+                <p class="name">Suspeito 2</p>
+                <p class="age">Idade: 25</p>
+                <img src="/images/digital2.jpg" alt="Digital do Suspeito 2" class="fingerprint" onclick="startComparison()">
+            </div>
+          
+            <div class="suspect">
+                <img src="/images/suspeito3.jpg" alt="Foto do Suspeito 3" class="photo">
+                <p class="name">Suspeito 3</p>
+                <p class="age">Idade: 40</p>
+                <img src="/images/digital3.jpg" alt="Digital do Suspeito 3" class="fingerprint" onclick="startComparison()">
+            </div>
+           
+            <div class="user">
+                <img class="fingerprint" id="userFingerprint">
+                <button id="statusText" onclick="startDigital()">Iniciar verificação</button>
+                
+                <script>
+                    function startDigital() {
+                        var button = document.getElementById("statusText");
+                        button.classList.add("clicked"); 
+                        button.innerHTML = "Verificação iniciada";
+                    }
+                </script>
+
+            </div>
+        </div>
+        
+        <div class="progress" id="progress">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+    </div>
+
+    <script>
+        var permissao = 0;
+        function startComparison() {
+            const progress = document.getElementById('progress');
+            const progressBar = document.getElementById('progressBar');
+            const userFingerprint = document.getElementById('userFingerprint');
+            const statusText = document.getElementById('statusText');              
+            if(permissao == 1){
+                progress.style.display = 'block';
+                progressBar.style.width = '0%';
+                progressBar.innerText = '0%';
+
+                let progressValue = 0;
+                const interval = setInterval(() => {
+                    progressValue += 10;
+                    progressBar.style.width = progressValue + '%';
+                    progressBar.innerText = progressValue + '%';
+
+                    if (progressValue >= 101) {
+                        clearInterval(interval);
+                        progress.style.display = 'none'; 
+                        alert('Digitais Não Compatíveis'); 
+                    }
+                }, 200); 
+            }else{
+                alert("Realize a leitura da sua biometria antes de realizar a comparação.");
+            }
+        }
+    </script>
+        <script>
+        function startDigital(){
+            userFingerprint.src = "https://pa1.aminoapps.com/6707/510b0daee67fbc091f14b9d8ef40aeb6c0d4dc7d_00.gif";
+            
+            setTimeout(() => {
+                userFingerprint.src = "/images/digital4.jpg";
+                statusText.innerText = "Digital coletada";
+            }, 5000);
+            permissao = 1;
+        }
+    </script>
+    </div>
+
+</body>
+
+</html>

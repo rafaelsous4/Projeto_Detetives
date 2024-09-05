@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detetives Digitais - Laboratório Forense Digital</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
+</head>
+<body style="background-image: url(/images/background.png);">
+    <header>
+        <div class="containernav">
+            <div class="header-content">
+                <div class="header-logo">
+                    <img src="/images/logobw.png" width="140" height="120" alt="IBF Logo">
+                </div>
+                <div class="header-text">
+                    <h1>IBF Investigations</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="/pag-inicial/paginainicial.html">Página Inicial</a></li>
+                            <li><a href="/pag-casos/casos.html">Casos</a></li>
+                            <li><a href="/pag-labforense/teste.html">Laboratório Forense</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container-cam">
+        <h1 class="cam-text">Evidências Digitais</h1>
+        <div class="image-gallery">
+            <div class="card" data-image="/images/print1.jpeg">
+                <h2>Print 1</h2>
+            </div>
+            <div class="card" data-image="/images/print2.jpeg">
+                <h2>Print 2</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Imagem" />
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.card');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close');
+    
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const imageSrc = this.getAttribute('data-image');
+                modalImage.src = imageSrc;
+                modal.style.display = 'flex';
+            });
+        });
+    
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            modalImage.src = ''; 
+        });
+    
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                modalImage.src = ''; 
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+.header-logo img {
+    max-width: 140px;
+    height: auto;
+}
+.header-text nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.header-text nav ul li {
+    margin-right: 20px;
+}
+
+.profile-dropdown .dropdown-menu {
+    background-color: #ffffff;
+}
+.profile-dropdown .dropdown-item {
+    color: #000000; 
+    font-size: 0.9rem; 
+}
+.profile-dropdown .dropdown-item:hover {
+    background-color: #ffffff; 
+}
+.dropdown-link {
+    color: #fff; 
+}
+
+.profile-dropdown{
+position: relative;
+padding-left: 550px;
+left: 100px;
+}
+
+.container {
+    padding-left: 20px;
+    margin: 0 auto;
+}
+.containernav {
+    padding-left: 50px;
+    margin: 0 auto;
+}
+
+.cidade{
+    padding-left: 140px;
+}
+
+.dropdown-menu{
+    left: 85px !important;
+}
+header {
+    background-image: url(images/fbibanner-frontpage.png);
+    background-position: 10px;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.header-content {
+    display: flex;
+}
+
+.header-logo {
+    flex-shrink: 0;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-text h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.dropdown custom-dropdown{
+    padding: 1250px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
